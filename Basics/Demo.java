@@ -12,8 +12,6 @@ class Animal {
 class Dog extends Animal { 
   public void animalSound() {
 
-    super.animalSound(); 
-
     System.out.println("The dog says: bow wow");
 
   }
@@ -22,9 +20,15 @@ class Dog extends Animal {
 public class Demo {
   public static void main(String args[]) {
 
-    Animal myDog = new Dog(); 
-    
+    Animal myDog = new Animal();     
     myDog.animalSound(); 
+
+
+    myDog = new Dog();
+    myDog.animalSound(); 
+
+
+
   
   }
 }

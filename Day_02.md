@@ -393,7 +393,279 @@ public class Main {
   }
 }
 ```
-
+Output:
+The animal makes a sound
+The dog says: bow wow
 __________________
+
+
+## Method Overriding
+
+- The way to Override the method that already exists in parent.
+
+- This overrides the method and creates a child class specific method.
+
+```java
+class Animal { // Superclass (parent)
+  public void animalSound() {
+    System.out.println("The animal makes a sound");
+  }
+}
+
+class Dog extends Animal { // Subclass (child)
+  public void animalSound() {
+    System.out.println("The dog says: bow wow");
+  }
+}
+
+public class Main {
+  public static void main(String args[]) {
+    Animal myDog = new Dog(); // Create a Dog object
+    myDog.animalSound(); // Call the method on the Dog object
+  }
+}
+```
+Output:
+The dog says: bow wow
+
+____________________
+
+
+## Access Modifiers
+
+- Different types of Access Modifiers
+
+    1. Public
+    2. Protected
+    3. Private
+    4. Default
+
+
+### Public
+
+- It can be access anywhere inside the package or outside the package
+- Eg: Methods
+
+### Protected
+
+- It can be accessed from same class and from the child classes only. 
+
+
+
+### Private
+
+- It is not accessed outside of class, not even from same package. 
+- Not even from the sub-classes
+
+### Default
+
+- It can be accessed from same package
+- It can be access
+
+
+
+Table of Access modifiers
+
+|                    | Public | Protected | Default | Private |
+|--------------------|--------|-----------|---------|---------|
+|Same Class          | Yes    | Yes       | Yes     | Yes     |
+|Same Package        | Yes    | Yes       | Yes     | No      |    
+|Same Pack Sub Class | Yes    | Yes       | Yes     | No      |
+|Diff Pack Sub CLass | Yes    | Yes       | No      | No      |
+|Dif Pack No SubClass| Yes    | No        | No      | No      |
+
+
+_____________________
+
+
+
+## PolyMorphism
+
+- Poly -> Many; Morphism -> Forms;
+
+
+- Different types of Polymorphism
+    1. Compile Time - Early binding -> Method OverLoading
+    2. Run Time - Late binding -> Method Overriding
+
+
+
+### Dynamic Method Dispatch
+
+- Dynamic Method Dispatch calls the method related to type of the object in the inheritance not related to the type of variable.
+
+
+```java
+class A{
+    public void show(){
+        System.out.println("In A Show");
+    }
+}
+
+class B extends A{
+    public void show(){
+        System.out.println("In B Show");
+    }
+}
+
+A obj = new A();
+obj.show(); // In A Show
+
+
+obj = new B();
+obj.show(); // In B Show
+
+```
+
+
+___________________
+
+
+## Final Keyword
+
+
+### Final Variable
+
+- Final variable is simply defining the constants
+- Have the Variable name as all CAPITALS.
+
+```java
+final double PIE = 3.14;
+```
+
+
+### Final Method
+
+- If a method is final method we cannot Override it further. 
+- Used to keep a method functionality constant throughout the inheritance hierarchy
+
+
+```java
+class Animal {
+
+    public final void animalSound() {
+      System.out.println("The animal makes a sound");
+
+    }
+}
+  
+class Dog extends Animal {
+    
+  // This throws an error as the super class animalSound is final method  
+  public void animalSound() {
+    System.out.println("The dog says: bow wow");
+
+  }
+}
+
+```
+
+### Final Class
+
+- If a class is final class it further cannot be extended.
+- It is kind of like a restriction of inheritance for the class. 
+- This ensures that the class implementation is final and prevents other classes from inheriting its behaviour.
+
+
+```java
+final class Animal {
+
+    public void animalSound() {
+      System.out.println("The animal makes a sound");
+
+    }
+}
+  
+ // This throws an error as Final class cannot be extended
+class Dog extends Animal { 
+
+}
+```
+
+_____________________
+
+
+## Object Classs Methods
+
+### toString()
+
+- Thi returns getClass().getName() + "@" + Object.hashCode()
+
+### equals()
+
+- This compares the hashCode of two objects but not the contents of the object
+
+
+- This is better to implement these methods for our class with the memVars, with the inbuilt IDE generator.
+
+_______________________
+
+
+## Type Casting
+
+- Java allows Lower to Higher Order casting by default
+
+
+### Upcasting
+
+- To have a Parent object reference be initialized with child object
+- This is default for java no need to mention it.
+- It is like assigning a Int value to Double variable - Java handles this conversion
+- Child object is assigned to Parent Reference
+
+```java
+class A{
+    public void show1(){
+        System.out.println("In A Show");
+    }
+}
+
+class B extends A{
+    public void show2(){
+        System.out.println("In B Show");
+    }
+}
+
+// Upcasting
+A obj = new B();
+obj.show1();
+
+```
+
+### DownCasting
+
+- To have a child Object reference be initialized with a parent object
+- This need to be exlicitly mentioned in java
+- It is like assigning a Double value to a Int variable - Need to Cast
+- Parent Object is assigned to child reference
+
+```java
+class A{
+    public void show1(){
+        System.out.println("In A Show");
+    }
+}
+
+class B extends A{
+    public void show2(){
+        System.out.println("In B Show");
+    }
+}
+
+// Upcasting
+A obj = new B();
+obj.show1();
+
+
+B obj2 = (B) obj;
+obj2.show2();
+```
+
+__________________________
+
+
+
+
+
 
 
