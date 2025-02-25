@@ -75,7 +75,7 @@ _________________
 
 ### Heap
 
-- The memory is storedin random form -> 
+- The memory is stored in random form -> 
 
 
 
@@ -85,7 +85,7 @@ _________________
 
 - The local variables are stored in stack
 
-- The instance ref in stored in the stack
+- The instance ref is stored in the stack
 
 |Stack | Data|
 |------|-----|
@@ -99,10 +99,10 @@ _________________
 - The Object/instance with the variable or methods are stored in the heap
 
 
-cal - Obj
-(  num | 5  )
-(-----------)
-( add() --- )
+cal - Obj<br\>
+(  num | 5  )<br\>
+(-----------)<br\>
+( add() --- )<br\>
 
 
 
@@ -138,7 +138,7 @@ public class Demo {
 
 Memory Visualized:
 
-<img src="image.png" alt="Memory Vizualized" width="300px" >
+<img src="image.png" alt="Memory Vizualized" max-width="300px" >
 
 
 ___________________
@@ -252,7 +252,7 @@ ____________
 - String is a class based
 
 ```java
-String name = new String();
+String name = new String("Bhuvan");
 
 String name = "Bhuvan";
 ```
@@ -268,11 +268,10 @@ String name = "Bhuvan";
 
 - String Buffer are Thread safe
 - String Builder are not Thread safe
-- We have many methods that are muttable specific
-
-- .append()
-- .insert()
-- .setLength()
+- We have many methods which are specific to String Builder or Buffer
+    - .append()
+    - .insert()
+    - .setLength()
 
 
 
@@ -322,6 +321,16 @@ str2 = str2.replace(0,1,"A");
 System.out.println(str2);
 System.out.println(str2.hashCode());
 ```
+
+- Output: 
+ABC
+64578
+BBC
+65539
+BBBBBC
+798154996
+ABBBBC
+798154996
 
 ________________________
 

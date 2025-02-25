@@ -26,7 +26,7 @@ public class Demo {
         students[1] = s2;
         students[2] = s3;
 
-        // System.out.println(students[1].name +": "+ students[1].marks);
+        System.out.println(students[1].name +": "+ students[1].marks);
 
 
 
