@@ -41,6 +41,8 @@ public class QuestionService {
             System.out.println();
         }
 
+        sc.close();
+
         System.out.println("You have scored "+ total+ "/5 !\n\n");
 
     }
