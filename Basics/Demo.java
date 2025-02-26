@@ -1,33 +1,26 @@
 package Basics;
 
-
-class Animal {
-    public void animalSound() {
-
-      System.out.println("The animal makes a sound");
-
-    }
+@FunctionalInterface
+interface Square {
+    int calculate(int x);
 }
-  
-class Dog extends Animal { 
-  public void animalSound() {
 
-    System.out.println("The dog says: bow wow");
 
-  }
-}
-  
 public class Demo {
   public static void main(String args[]) {
 
-    Animal myDog = new Animal();     
-    myDog.animalSound(); 
+    int a = 5;
 
+    // lambda expression to 
+    // define the calculate method
+    Square s = new Square(){
+        public int calculate(int x){
+            return x *x;
+        }
+    }; 
 
-    myDog = new Dog();
-    myDog.animalSound(); 
-
-
+    int ans = s.calculate(a);
+    System.out.println(ans);
 
   
   }
