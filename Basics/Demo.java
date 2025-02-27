@@ -1,30 +1,21 @@
 package Basics;
-
-@FunctionalInterface
-interface Square {
-    int calculate(int x);
-}
+import java.util.*;
 
 
 public class Demo {
-  public static void main(String args[]) {
+  public static void main(String args[]) throws InterruptedException {
 
-    int a = 5;
+  Set<Integer> nums = new TreeSet<>(); 
 
-    // lambda expression to 
-    // define the calculate method
-    Square s = new Square(){
-        public int calculate(int x){
-            return x *x;
-        }
-    }; 
+    nums.add(70);
+    nums.add(96);
+    nums.add(30);
+    nums.add(18);
+    nums.add(10);
+    nums.add(10);
+    nums.add(10);
 
-    int ans = s.calculate(a);
-    System.out.println(ans);
+    System.out.println(nums);
 
-  
   }
 }
-
-
-
