@@ -12,7 +12,7 @@ public class Test {
         
         Random ran = new Random();
 
-        for(int i = 0; i < 1000; i++){
+        for(int i = 0; i < 10000; i++){
             nums.add(ran.nextInt(100));
         }
 
@@ -30,7 +30,14 @@ public class Test {
         // Parallel Stream
         long startPTime = System.currentTimeMillis();
         int sum1 = nums.parallelStream()
-        .mapToInt(n -> n*2)
+        .mapToInt(n -> {
+            try {
+                Thread.sleep(1);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            return n*2;
+        })
         .sum();
         long endPTime = System.currentTimeMillis();
 
