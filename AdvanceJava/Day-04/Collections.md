@@ -65,3 +65,30 @@ System.out.println(nums);
 // Output - [10, 18, 30, 70, 96]
 ```
 
+________________
+
+## Maps
+
+- They are kind of a key - value pairs
+
+```java
+
+Map<String, Integer> students = new HashMap<>();
+
+students.put("Bhuvan", 96);
+students.put("Thota", 96);
+students.put("Bngrm", 98);
+
+System.out.println(students); // {Bngrm=98, Bhuvan=96, Thota=96}
+System.out.println(students.get("Bhuvan")); // 96
+
+System.out.println(students.keySet()); //[Bngrm, Bhuvan, Thota]
+
+System.out.println(students.put("Bngrm", 99));
+System.out.println(students); // {Bngrm=99, Bhuvan=96, Thota=96}
+```
+
+___________________________
+
+
+
