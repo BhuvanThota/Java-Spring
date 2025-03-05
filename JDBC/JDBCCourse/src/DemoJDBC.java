@@ -35,15 +35,34 @@ public class DemoJDBC {
 
         // Insert Begins
         // Execute Statement
-        prest.setInt(1,10);
-        prest.setString(2, "rohit");
-        prest.setInt(3, 72);
+        prest.setInt(1,12);
+        prest.setString(2, "Kohli");
+        prest.setInt(3, 88);
 
-        prest.execute();
+//        prest.execute();
+
+        ResultSet res = prest.executeQuery();
+
         //Insert Ends
 
         // Statement close
+//        prest.close();
+
+
+//        PreparedStatement prest = con.prepareStatement(querySelectAll);
+//
+//        ResultSet res = prest.executeQuery();
+//
+        System.out.println(res.getMetaData().getColumnCount());
+//        res.next();
+//        System.out.println(res.getInt(1));
+//        System.out.println(res.getString(2));
+//        System.out.println(res.getInt(3));
+
+
+        res.close();
         prest.close();
+        con.close();
 
         System.out.println("Connection Closed!");
 
