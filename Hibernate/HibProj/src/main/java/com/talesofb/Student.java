@@ -9,9 +9,7 @@ public class Student {
 
     @Id
     private int rollNo;
-
     private String sName;
-
     private int sAge;
 
     public int getRollNo() {
